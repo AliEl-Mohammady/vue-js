@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+button {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+
+}
+
+label {
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+
+}
+
+.container {
+    text-align: left;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+
+
+

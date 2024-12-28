@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue js</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Welocome to Vue js</h1>
+        <p>{{ message }}</p>
+        <span>Counter : {{ count }}   </span> ## <span>    Multiply Number X 2 : {{ numberMultiplied }}</span>
+        <p>{{ name }}</p>
+        <button v-on:click="Increment">Increment</button>
+        <button @click="decrement">Decrement</button>
+        <a href="https://www.google.com" target="_blank" @click.prevent>Googl</a>
+        <br>
+        <form @submit.prevent="sendObject">
+            <label for="textInput">Name</label>
+            <input type="text" placeholder="Enter your name" v-model="textInput" @keydown.enter="testKeydown" id="textInput">
+            <label for="textInput">Age</label>
+        <input type="text" placeholder="Enter your age" v-model="ageInpuut" @keydown.alt.enter="testKeydown">
+
+        <button type="submit" >Submit</button>
+        </form>
+        <div class="container">
+            <h3 :class="dynamicClass">Dynamic Class Test</h3>
+            <input type="text" name="class" id="class" v-model="dynamicClass">
+            <h3 :style=`font-size:${dynamicStyle}`>Dynamic Style</h3>
+            <input type="text" name="style" id="style" v-model="dynamicStyle">
+
+            <h3 :style=`font-size:${dynamicStyle}`>IF condition</h3>
+            <p v-if="count ===0 ">Count is 0</p>
+            <p v-else-if="count ===1 ">Count is 1</p>
+            <p v-else>Count is not 0</p>
+            <p v-show="count ===10 ">Excellent degree in programming</p></p>
+
+            <h3>For loop</h3>
+            <ul>
+                <li v-for="student in students" :key="student.id">
+                    <h5>{{ student.name }} - {{ student.age }}</h5>
+                    <span v-for="(subject, index) in student.subjects" :key="index">-{{subject}}  </span>
+                </li>
+            </ul>
+            <!-- Ensure the component registration is correct in your Vue app -->
+            <my-first-component></my-first-component>
+    </div>
+    <div id="app-2">
+        <h1 ref="app2Message">{{ message }} from app2</h1>
+        <p ref="app2Count">{{ count_2 }}</p>
+        <button @click="refsFunction">Refs</button>
+        <my-scond-component></my-scond-component>
+    </div>
+        
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
